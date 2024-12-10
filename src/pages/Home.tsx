@@ -39,7 +39,6 @@ const Home: React.FC = () => {
         I&apos;m currently working with the engineering team at <a href="https://www.goldmansachs.com/"><i>Goldman Sachs</i></a>, 
         focusing on internal tooling and infrastructure projects.
       </p>
-
       <p>
         I contributed to the creation of a documentation portal at Goldman Sachs that changed how teams share 
         and discover information. On the side, I&apos;m contributing to a project in Cote d'Ivoire, helping 
