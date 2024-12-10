@@ -26,12 +26,11 @@ const OnStartingOut: React.FC = () => {
                 <BackLinkContainer><Link to="/">{'← Paul Doho'}</Link></BackLinkContainer>
                 <Title>On Starting Out, Learning the Flow, and the Kindness of Colleagues</Title>
                 <Date>2024-12</Date>
-
                 <Paragraph>
                     Not long ago, I was fresh out of college, stepping into a world I knew mostly from textbooks
                     and late-night coding sessions. At Goldman Sachs, everything felt bigger: there were more stakeholders,
                     more complex codebases, and a release process that involved branching, pull requests, and careful reviews—things
-                    I’d only read about before.
+                    I&apos;d only read about before.
                 </Paragraph>
 
                 <Paragraph>
