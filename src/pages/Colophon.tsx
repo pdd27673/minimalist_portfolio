@@ -21,7 +21,7 @@ const Colophon: React.FC = () => {
                 <Title>Colophon</Title>
                 <Paragraph>
                     This is a static site, built with React and served via a Vercel. < br />
-                    The design is inspired by Mark McGranaghan's websie.
+                    The design is inspired by Mark McGranaghan's website.
                 </Paragraph>
                 <Paragraph>
                     It&apos;s set in a classic serif font. <br />
