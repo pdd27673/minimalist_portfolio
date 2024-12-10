@@ -36,7 +36,7 @@ const Home: React.FC = () => {
       </p>
 
       <p>
-        I&apos;m currently working with the engineering team at <a href="https://goldmansachs.com"><i>Goldman Sachs</i></a>, 
+        I&apos;m currently working with the engineering team at <a href="https://www.goldmansachs.com/"><i>Goldman Sachs</i></a>, 
         focusing on internal tooling and infrastructure projects.
       </p>
 
