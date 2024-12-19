@@ -41,12 +41,16 @@ const Home: React.FC = () => {
       </p>
       <p>
         I contributed to the creation of a documentation portal at Goldman Sachs that changed how teams share 
-        and discover information. On the side, I&apos;m contributing to a project in Cote d'Ivoire, helping 
+        and discover information. 
+        <br /><br />
+        On the side, I&apos;m contributing to a project in Cote d'Ivoire, helping 
         to bring streamlined technology solutions to the housing sector. 
         <br />
+        I am also working on an app--<a href="https://github.com/pdd27673/jam-bot">a Spotify Jam Discord bot</a>--that will allow users to have Spotify Jam sessions directly in channels.
+        <br /><br />
         Previously, I built an <a href="https://github.com/pdd27673/Xgridz">app</a> for disability assessments, improving accessibility 
         for special education kids.
-      </p>
+     </p>
 
       <EntriesList>
         <Entry><span>2024-12 </span><Link to="/on-starting-out">On Starting Out, Learning the Flow</Link></Entry>
