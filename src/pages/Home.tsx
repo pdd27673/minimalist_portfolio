@@ -50,6 +50,7 @@ const Home: React.FC = () => {
         <br /><br />
         Previously, I built an <a href="https://github.com/pdd27673/Xgridz">app</a> for disability assessments, improving accessibility 
         for special education kids.
+        
      </p>
 
       <EntriesList>
