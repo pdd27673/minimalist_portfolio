@@ -34,7 +34,6 @@ const Home: React.FC = () => {
       <p>
         This is the site of <strong>Paul Doho</strong>, software engineer and aspiring entrepreneur.
       </p>
-
       <p>
         I&apos;m currently working with the engineering team at <a href="https://www.goldmansachs.com/"><i>Goldman Sachs</i></a>, 
         focusing on internal tooling and infrastructure projects.
