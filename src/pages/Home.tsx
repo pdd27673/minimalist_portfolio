@@ -59,7 +59,7 @@ const Home: React.FC = () => {
         <MetaLink><Link to="/interests">Interests</Link></MetaLink>
         <MetaLink><Link to="/contact">Contact</Link></MetaLink>
         <MetaLink><Link to="/colophon">Colophon</Link></MetaLink>
-        <MetaLink><a href="https://jupzx17kqb01mobk.public.blob.vercel-storage.com/resume-fy6oOF5DyaaIyPTrrvt7hbUq3ohoxn.pdf">Resume</a></MetaLink>
+        <MetaLink><a href="https://jupzx17kqb01mobk.public.blob.vercel-storage.com/resume-zLZ3xPOhMqvmj4cop4mkSislCpodZN">Resume</a></MetaLink>
       </MetaLinks>
     </Container>
   );
