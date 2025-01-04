@@ -6,10 +6,12 @@ import Contact from './pages/Contact';
 import Colophon from './pages/Colophon';
 import GlobalStyles from './styles/GlobalStyles';
 import Interests from './pages/Interests';
+import { Analytics } from '@vercel/analytics/react';
 
 const App: React.FC = () => {
   return (
     <>
+      <Analytics />
       <GlobalStyles />
       <Routes>
         <Route path="/" element={<Home />} />
