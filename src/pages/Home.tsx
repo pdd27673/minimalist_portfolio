@@ -30,12 +30,12 @@ const MetaLink = styled.li`
 
 const Home: React.FC = () => {
   return (
-    <Container>
+    <Container role="main">
       <p>
         This is the site of <strong>Paul Doho</strong>, software engineer and aspiring entrepreneur.
       </p>
       <p>
-        I&apos;m currently working with the engineering team at <a href="https://www.goldmansachs.com/"><i>Goldman Sachs</i></a>, 
+        I&apos;m currently working with the engineering team at <a href="https://www.goldmansachs.com/" aria-label="Visit Goldman Sachs website"><i>Goldman Sachs</i></a>, 
         focusing on internal tooling and infrastructure projects.
       </p>
       <p>
@@ -45,22 +45,26 @@ const Home: React.FC = () => {
         On the side, I&apos;m contributing to a project in Cote d'Ivoire, helping 
         to bring streamlined technology solutions to the housing sector. 
         <br />
-        I am also working on an app--<a href="https://github.com/pdd27673/jam-bot">a Spotify Jam Discord bot</a>--that will allow users to have Spotify Jam sessions directly in channels.
+        I am also working on a tennis court booking application that will help players easily find and reserve available courts in their area.
         <br /><br />
-        Previously, I built an <a href="https://github.com/pdd27673/Xgridz">app</a> for disability assessments, improving accessibility 
+        Previously, I built an <a href="https://github.com/pdd27673/Xgridz" aria-label="View Xgridz project on GitHub">app</a> for disability assessments, improving accessibility 
         for special education kids.
      </p>
 
-      <EntriesList>
-        <Entry><span>2024-12 </span><Link to="/on-starting-out">On Starting Out, Learning the Flow</Link></Entry>
-      </EntriesList>
+      <nav aria-label="Recent entries">
+        <EntriesList>
+          <Entry><time dateTime="2024-12">2024-12</time> <Link to="/on-starting-out">On Starting Out, Learning the Flow</Link></Entry>
+        </EntriesList>
+      </nav>
 
-      <MetaLinks>
-        <MetaLink><Link to="/interests">Interests</Link></MetaLink>
-        <MetaLink><Link to="/contact">Contact</Link></MetaLink>
-        <MetaLink><Link to="/colophon">Colophon</Link></MetaLink>
-        <MetaLink><a href="https://jupzx17kqb01mobk.public.blob.vercel-storage.com/2025_UK_Resume-vrqNNFp7ujSGxtedrU3IaI4sVIC8C3.pdf">Resume</a></MetaLink>
-      </MetaLinks>
+      <nav aria-label="Site navigation">
+        <MetaLinks>
+          <MetaLink><Link to="/interests">Interests</Link></MetaLink>
+          <MetaLink><Link to="/contact">Contact</Link></MetaLink>
+          <MetaLink><Link to="/colophon">Colophon</Link></MetaLink>
+          <MetaLink><a href="https://jupzx17kqb01mobk.public.blob.vercel-storage.com/2025_UK_Resume-vrqNNFp7ujSGxtedrU3IaI4sVIC8C3.pdf" aria-label="Download resume">Resume</a></MetaLink>
+        </MetaLinks>
+      </nav>
     </Container>
   );
 };
