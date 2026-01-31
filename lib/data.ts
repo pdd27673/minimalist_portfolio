@@ -6,7 +6,7 @@ export const portfolioData = {
     email: "pauldoho@outlook.com",
     linkedin: "https://www.linkedin.com/in/paul-doho-702b82200/",
     github: "https://github.com/pdd27673",
-    resume: "https://github.com/pdd27673/pdd27673/blob/0dba0482129167454108cd04ab29a1c1841a7f64/Paul_Doho_Resume%20(1).docx",
+    resume: "https://raw.githubusercontent.com/pdd27673/pdd27673/0dba0482129167454108cd04ab29a1c1841a7f64/Paul_Doho_Resume%20(1).docx",
     bio: [
       "I'm a **full-stack software engineer** with experience in building scalable applications, cloud infrastructure (AWS), CI/CD pipelines, and AI/ML systems.",
       "Currently at [Goldman Sachs](https://www.goldmansachs.com/), I focus on internal tooling and infrastructure projects. I contributed to building a documentation portal that transformed how engineering teams share and discover information across the organization. I am currently working on an internal full stack mobile app to help serve senior members of the firm.",
