@@ -53,6 +53,19 @@ export const portfolioData = {
       ]
     }
   ],
+  education: [
+    {
+      institution: "California State University",
+      degree: "Bachelor of Science",
+      field: "Computer Science",
+      location: "Northridge, CA, USA",
+      dateRange: "2018 – 2021",
+      achievements: [
+        "Focused on software engineering, algorithms, and data structures",
+        "Completed coursework in distributed systems, database design, AI models,and web development"
+      ]
+    }
+  ],
   projects: [
     {
       title: "Time for Tennis (10s)",
@@ -114,6 +127,28 @@ export const portfolioData = {
       url: "/on-starting-out",
       isLatest: false
     }
+  ],
+  interests: [
+    {
+      title: "Socialism",
+      icon: "Users",
+      description: "I'm interested in exploring socialist theory and its various interpretations—from democratic socialism to more radical approaches. The ideas around collective ownership, worker rights, and economic democracy resonate with me. I'm particularly drawn to understanding how these principles can be applied in modern contexts and what they mean for building more equitable societies."
+    },
+    {
+      title: "Tennis",
+      icon: "Circle",
+      description: "Tennis combines physical endurance with mental strategy in a way that's uniquely challenging. I appreciate the physical aspect of the sport and the mental strategy required to win a point. I also like challenges, and tennis provides a lot of them."
+    },
+    {
+      title: "Vinyls",
+      icon: "Disc",
+      description: "There's something special about the ritual of playing vinyl records—the tactile experience of handling the record, placing it on the turntable, hearing that warm, analog sound and being transported to another time and place. I enjoy collecting records across genres. One my favorite latest addition is 'Debi Tirar Mas Fotos' by Bad Bunny."
+    },
+    {
+      title: "Cooking",
+      icon: "ChefHat",
+      description: "Cooking is my way of expressing creativity and showing love. I enjoy trying out new recipes and sharing them with my family and friends. It's a way to connect with others through shared meals and create a sense of community."
+    },
   ],
   activities: {
     leetcode: [
