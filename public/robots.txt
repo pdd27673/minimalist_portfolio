@@ -1,0 +1,198 @@
+# Allow legitimate search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: Exabot
+Allow: /
+
+User-agent: facebot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# Block common malicious bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+User-agent: BytedanceBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: TwitterBot
+Disallow: /
+
+User-agent: LinkedInBot
+Disallow: /
+
+User-agent: WhatsApp
+Disallow: /
+
+User-agent: TelegramBot
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: YandexImages
+Disallow: /
+
+User-agent: YandexVideo
+Disallow: /
+
+User-agent: YandexMedia
+Disallow: /
+
+User-agent: YandexBlogs
+Disallow: /
+
+User-agent: YandexFavicons
+Disallow: /
+
+User-agent: YandexWebmaster
+Disallow: /
+
+User-agent: YandexPagechecker
+Disallow: /
+
+User-agent: YandexImageResizer
+Disallow: /
+
+User-agent: YandexAdNet
+Disallow: /
+
+User-agent: YandexDirect
+Disallow: /
+
+User-agent: YandexMetrika
+Disallow: /
+
+User-agent: YandexNews
+Disallow: /
+
+User-agent: YandexCatalog
+Disallow: /
+
+User-agent: YandexAntivirus
+Disallow: /
+
+User-agent: YandexMarket
+Disallow: /
+
+User-agent: YandexVertis
+Disallow: /
+
+User-agent: YandexForDomain
+Disallow: /
+
+User-agent: YandexSpiderBot
+Disallow: /
+
+User-agent: YandexSearchShop
+Disallow: /
+
+User-agent: YandexMedianaBot
+Disallow: /
+
+User-agent: YandexOntoDB
+Disallow: /
+
+User-agent: YandexVerticals
+Disallow: /
+
+# Block vulnerability scanners and common attack patterns
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-json/
+Disallow: /xmlrpc.php
+Disallow: /.well-known/
+Disallow: /cgi-bin/
+Disallow: /*.php$
+Disallow: /admin.php
+Disallow: /admin/
+Disallow: /administrator/
+Disallow: /api/
+Disallow: /backup/
+Disallow: /config/
+Disallow: /database/
+Disallow: /db/
+Disallow: /includes/
+Disallow: /install/
+Disallow: /logs/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /uploads/
+
+# Allow all other paths for legitimate crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://pauldoho.com/sitemap.xml
