@@ -1,8 +1,9 @@
 'use client'
 
+import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github, BookOpen } from 'lucide-react'
 import { getTechIcon } from '@/lib/tech-icons'
 import { portfolioData } from '@/lib/data'
 
@@ -57,6 +58,17 @@ export function ProjectsSection() {
               <p className="text-xs leading-relaxed text-muted-foreground">
                 {featuredProject.description}
               </p>
+
+              {featuredProject.caseStudy && (
+                <Link
+                  href={featuredProject.caseStudy}
+                  className="inline-flex w-fit items-center gap-1 text-xs font-medium text-accent hover:underline"
+                >
+                  <BookOpen className="h-3 w-3" />
+                  Read the writeup
+                  <span aria-hidden>→</span>
+                </Link>
+              )}
 
               <div className="mt-auto flex flex-wrap gap-1.5">
                 {featuredProject.technologies.map((tech, i) => {
@@ -114,6 +126,17 @@ export function ProjectsSection() {
               <p className="text-xs leading-relaxed text-muted-foreground">
                 {project.description}
               </p>
+
+              {project.caseStudy && (
+                <Link
+                  href={project.caseStudy}
+                  className="inline-flex w-fit items-center gap-1 text-xs font-medium text-accent hover:underline"
+                >
+                  <BookOpen className="h-3 w-3" />
+                  Read the writeup
+                  <span aria-hidden>→</span>
+                </Link>
+              )}
 
               <div className="mt-auto flex flex-wrap gap-1.5">
                 {project.technologies.map((tech, i) => {

@@ -73,7 +73,17 @@ export const portfolioData = {
       technologies: ["Next.js 15", "TypeScript", "SQLite", "Drizzle ORM", "NextAuth.js", "Cheerio", "Telegram API", "Resend", "Tailwind CSS 4.0", "Railway"],
       url: "https://timefor10s.com",
       github: "https://github.com/pdd27673/10s-court-monitor",
+      caseStudy: null,
       featured: true
+    },
+    {
+      title: "Midnight Court Booker",
+      description: "The autonomous other half of Time for Tennis: a bot that wins London's midnight court-release race. Trusts the Stripe PaymentIntent as the real lock, splits on the pay_init response (fail fast on 4xx, recover held slots via Playwright on 5xx), cascades court → time → venue fallbacks, and is driven from a Telegram approval card with crash-recoverable SQLite state.",
+      technologies: ["TypeScript", "Node.js", "Playwright", "got", "SQLite", "node-cron", "Telegram API", "Fly.io"],
+      url: null,
+      github: null,
+      caseStudy: "/winning-the-midnight-court-race",
+      featured: false
     },
     {
       title: "Ivory Coast Housing Platform",
@@ -81,6 +91,7 @@ export const portfolioData = {
       technologies: ["React", "AWS", "Node.js"],
       url: null,
       github: null,
+      caseStudy: null,
       featured: false
     },
     {
@@ -89,6 +100,7 @@ export const portfolioData = {
       technologies: ["React", "TypeScript", "Firebase"],
       url: null,
       github: "https://github.com/pdd27673/Xgridz",
+      caseStudy: null,
       featured: false
     }
   ],
@@ -116,10 +128,16 @@ export const portfolioData = {
   ],
   writings: [
     {
+      title: "Winning the Midnight Court Race",
+      date: "2026-06",
+      url: "/winning-the-midnight-court-race",
+      isLatest: true
+    },
+    {
       title: "Building a React Microsoft Teams App: What We Learned",
       date: "2026-01",
       url: "/building-react-teams-app",
-      isLatest: true
+      isLatest: false
     },
     {
       title: "On Starting Out, Learning the Flow",

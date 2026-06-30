@@ -26,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/winning-the-midnight-court-race`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/building-react-teams-app`,
       lastModified: currentDate,
       changeFrequency: 'yearly',
