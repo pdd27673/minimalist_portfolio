@@ -86,11 +86,29 @@ export const portfolioData = {
       featured: false
     },
     {
-      title: "Ivory Coast Housing Platform",
-      description: "Contributing to a project bringing streamlined technology solutions to the housing sector in Cote d'Ivoire, helping modernize real estate processes.",
-      technologies: ["React", "AWS", "Node.js"],
+      title: "Terra",
+      description: "A bilingual (FR/EN) property marketplace for Côte d'Ivoire, focused on Abidjan. A pnpm monorepo pairing an Expo / React Native mobile app with Next.js admin and marketing/listings web apps on a Supabase backend — OTP auth, a live listings feed, favorites, real-time messaging, and profiles.",
+      technologies: ["React Native", "Expo", "Next.js 15", "TypeScript", "Supabase", "PostgreSQL", "pnpm Monorepo", "Tailwind CSS"],
       url: null,
       github: null,
+      caseStudy: null,
+      featured: false
+    },
+    {
+      title: "Wada Palette Archive",
+      description: "A digital companion to Sanzo Wada's Dictionary of Color Combinations — 200 palettes from the 1930s Japanese reference work, browsable and filterable in a clean single-page archive.",
+      technologies: ["JavaScript", "HTML", "CSS", "GitHub Pages"],
+      url: null,
+      github: "https://github.com/pdd27673/misc-projects/tree/wada-palette-archive",
+      caseStudy: null,
+      featured: false
+    },
+    {
+      title: "Gametime Grid",
+      description: "A TV-guide-style EPG for sports — a scrolling grid of live and upcoming games across the major leagues, so you can see what's on at a glance.",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      url: null,
+      github: "https://github.com/pdd27673/misc-projects/tree/gametime-grid-sports-epg",
       caseStudy: null,
       featured: false
     },
@@ -166,6 +184,11 @@ export const portfolioData = {
       title: "Cooking",
       icon: "ChefHat",
       description: "Cooking is my way of expressing creativity and showing love. I enjoy trying out new recipes and sharing them with my family and friends. It's a way to connect with others through shared meals and create a sense of community."
+    },
+    {
+      title: "Fashion",
+      icon: "Shirt",
+      description: "I enjoy fashion as a form of self-expression—the way an outfit can shift how you carry yourself and how the right pieces come together. I like paying attention to fit, fabric, and silhouette, and building a wardrobe that feels considered rather than trend-chasing."
     },
   ],
   activities: {
