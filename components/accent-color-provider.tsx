@@ -42,13 +42,13 @@ export function AccentColorProvider({ children }: { children: React.ReactNode })
     root.style.setProperty('--ring', colors[currentIndex])
   }, [currentIndex, resolvedTheme, mounted])
 
-  // Rotate colors every 5 seconds
+  // Rotate colors every 22.5 seconds
   useEffect(() => {
     if (!mounted) return
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % accentColors.light.length)
-    }, 5000)
+    }, 22500)
 
     return () => clearInterval(interval)
   }, [mounted])
