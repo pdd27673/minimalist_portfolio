@@ -71,6 +71,17 @@ export default function WinningTheMidnightCourtRacePage() {
               TypeScript on Node, <code>got</code> for the fast HTTP path with a Playwright fallback for the ambiguous one, SQLite for crash-recoverable state, node-cron for the schedule, and a Telegram bot for the whole interface. Around 226 tests cover the failure branches, since those are the parts that only ever run once a night under conditions you can't reproduce on demand. It's deployed on Fly and pairs with Time for Tennis: that service watches and notifies, this one acts.
             </p>
 
+            <h2 className="text-lg font-medium mt-6 mb-3">By the numbers</h2>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              It's been running nightly in production against real money and real contention. As of early July 2026, from the Fly deployment's own logs and booking history:
+            </p>
+            <ul className="text-sm leading-relaxed text-muted-foreground space-y-2 list-disc list-inside">
+              <li><strong className="text-foreground">16 courts booked fully autonomously</strong> since mid-May 2026 — <strong className="text-foreground">11 of them the contested 7&nbsp;PM weekday slot</strong> that's gone within seconds of release.</li>
+              <li><strong className="text-foreground">Fastest court secured ~26&nbsp;seconds after midnight</strong>, ~60&nbsp;seconds on average — pushing through page loads that balloon to 13–23&nbsp;seconds each under release-time load.</li>
+              <li>Runs unattended on a <strong className="text-foreground">single 1&nbsp;GB Fly machine</strong>, one race a night, no babysitting.</li>
+              <li>It doesn't win every night, and that's the point: when the slot is genuinely gone, the cascade falls back or the run fails cleanly — it never reports a booking it didn't make. The early misses were integration bugs shaken out during bring-up; the rest are slots that were simply already taken.</li>
+            </ul>
+
             <h2 className="text-lg font-medium mt-6 mb-3">What I'd take from it</h2>
             <ul className="text-sm leading-relaxed text-muted-foreground space-y-2 list-disc list-inside">
               <li>Trust the system's source of truth (the payment intent), not the UI's optimistic story (the cart).</li>

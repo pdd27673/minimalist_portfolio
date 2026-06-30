@@ -96,19 +96,10 @@ export const portfolioData = {
     },
     {
       title: "Wada Palette Archive",
-      description: "A digital companion to Sanzo Wada's Dictionary of Color Combinations — 200 palettes from the 1930s Japanese reference work, browsable and filterable in a clean single-page archive.",
-      technologies: ["JavaScript", "HTML", "CSS", "GitHub Pages"],
-      url: null,
+      description: "A digital companion to Sanzo Wada's Dictionary of Color Combinations — all 348 palettes from the 1930s Japanese reference work, browsable and searchable in a clean single-page archive.",
+      technologies: ["JavaScript", "HTML", "CSS", "Cloudflare Pages"],
+      url: "https://adocc.pages.dev/",
       github: "https://github.com/pdd27673/misc-projects/tree/wada-palette-archive",
-      caseStudy: null,
-      featured: false
-    },
-    {
-      title: "Gametime Grid",
-      description: "A TV-guide-style EPG for sports — a scrolling grid of live and upcoming games across the major leagues, so you can see what's on at a glance.",
-      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-      url: null,
-      github: "https://github.com/pdd27673/misc-projects/tree/gametime-grid-sports-epg",
       caseStudy: null,
       featured: false
     },
