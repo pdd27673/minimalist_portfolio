@@ -3,6 +3,7 @@ export const portfolioData = {
     name: "Paul Doho",
     title: "Fullstack/AI Engineer",
     location: "London, UK",
+    status: "Currently building Terra and teaching a bot to win London's tennis-court rush",
     email: "pauldoho@outlook.com",
     linkedin: "https://www.linkedin.com/in/paul-doho-702b82200/",
     github: "https://github.com/pdd27673",
