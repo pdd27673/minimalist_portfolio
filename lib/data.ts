@@ -75,6 +75,7 @@ export const portfolioData = {
       url: "https://timefor10s.com",
       github: "https://github.com/pdd27673/10s-court-monitor",
       caseStudy: null,
+      cover: "time-for-tennis",
       featured: true
     },
     {
@@ -84,6 +85,7 @@ export const portfolioData = {
       url: null,
       github: null,
       caseStudy: "/winning-the-midnight-court-race",
+      cover: "midnight-booker",
       featured: false
     },
     {
@@ -93,6 +95,7 @@ export const portfolioData = {
       url: null,
       github: null,
       caseStudy: null,
+      cover: "terra",
       featured: false
     },
     {
@@ -102,6 +105,7 @@ export const portfolioData = {
       url: "https://adocc.pages.dev/",
       github: "https://github.com/pdd27673/misc-projects/tree/wada-palette-archive",
       caseStudy: null,
+      cover: "wada",
       featured: false
     },
     {
@@ -111,6 +115,7 @@ export const portfolioData = {
       url: null,
       github: "https://github.com/pdd27673/Xgridz",
       caseStudy: null,
+      cover: "xgridz",
       featured: false
     }
   ],

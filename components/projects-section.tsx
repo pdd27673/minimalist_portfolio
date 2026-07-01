@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { ExternalLink, Github, BookOpen } from 'lucide-react'
 import { getTechIcon } from '@/lib/tech-icons'
 import { portfolioData } from '@/lib/data'
+import { ProjectCover } from '@/components/project-cover'
 
 export function ProjectsSection() {
   const projects = portfolioData.projects
@@ -18,8 +19,18 @@ export function ProjectsSection() {
       
       {featuredProject && (
         <div className="mb-4">
-          <Card className="h-full border-border p-4 transition-all hover:border-accent group">
-            <div className="flex h-full flex-col gap-3">
+          <Card className="relative h-full overflow-hidden border-border p-0 transition-all hover:border-accent group">
+            {featuredProject.url && (
+              <a
+                href={featuredProject.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 z-10"
+                aria-label={`Visit ${featuredProject.title}`}
+              />
+            )}
+            <ProjectCover cover={featuredProject.cover} className="h-32 border-b border-border" />
+            <div className="flex h-full flex-col gap-3 p-4">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-1.5 flex-wrap">
                   <h3 className="text-sm font-medium group-hover:text-accent transition-colors">
@@ -29,7 +40,7 @@ export function ProjectsSection() {
                     ⭐ Featured
                   </Badge>
                 </div>
-                <div className="flex gap-1.5">
+                <div className="relative z-20 flex gap-1.5">
                   {featuredProject.url && (
                     <a
                       href={featuredProject.url}
@@ -54,7 +65,7 @@ export function ProjectsSection() {
                   )}
                 </div>
               </div>
-              
+
               <p className="text-xs leading-relaxed text-muted-foreground">
                 {featuredProject.description}
               </p>
@@ -62,7 +73,7 @@ export function ProjectsSection() {
               {featuredProject.caseStudy && (
                 <Link
                   href={featuredProject.caseStudy}
-                  className="inline-flex w-fit items-center gap-1 text-xs font-medium text-accent hover:underline"
+                  className="relative z-20 inline-flex w-fit items-center gap-1 text-xs font-medium text-accent hover:underline"
                 >
                   <BookOpen className="h-3 w-3" />
                   Read the writeup
@@ -87,17 +98,38 @@ export function ProjectsSection() {
       )}
       
       <div className="grid gap-3 sm:grid-cols-2">
-        {otherProjects.map((project, index) => (
-          <Card 
+        {otherProjects.map((project, index) => {
+          // Whole card links to the best available target; internal case-study
+          // routes use Link, external url/github use a new-tab anchor.
+          const internalHref = !project.url && project.caseStudy ? project.caseStudy : null
+          const externalHref = project.url || (!project.caseStudy ? project.github : null) || null
+          return (
+          <Card
             key={index}
-            className="h-full border-border p-4 transition-all hover:border-accent group"
+            className="relative h-full overflow-hidden border-border p-0 transition-all hover:border-accent group"
           >
-            <div className="flex h-full flex-col gap-3">
+            {internalHref ? (
+              <Link
+                href={internalHref}
+                className="absolute inset-0 z-10"
+                aria-label={`Open ${project.title}`}
+              />
+            ) : externalHref ? (
+              <a
+                href={externalHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 z-10"
+                aria-label={`Open ${project.title}`}
+              />
+            ) : null}
+            <ProjectCover cover={project.cover} className="h-24 border-b border-border" />
+            <div className="flex h-full flex-col gap-3 p-4">
               <div className="flex items-start justify-between gap-2">
                 <h3 className="text-sm font-medium group-hover:text-accent transition-colors">
                   {project.title}
                 </h3>
-                <div className="flex gap-1.5">
+                <div className="relative z-20 flex gap-1.5">
                   {project.url && (
                     <a
                       href={project.url}
@@ -130,7 +162,7 @@ export function ProjectsSection() {
               {project.caseStudy && (
                 <Link
                   href={project.caseStudy}
-                  className="inline-flex w-fit items-center gap-1 text-xs font-medium text-accent hover:underline"
+                  className="relative z-20 inline-flex w-fit items-center gap-1 text-xs font-medium text-accent hover:underline"
                 >
                   <BookOpen className="h-3 w-3" />
                   Read the writeup
@@ -151,7 +183,8 @@ export function ProjectsSection() {
               </div>
             </div>
           </Card>
-        ))}
+          )
+        })}
       </div>
     </section>
   )
