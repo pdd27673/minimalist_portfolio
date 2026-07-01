@@ -29,7 +29,9 @@ export function ProjectsSection() {
                 aria-label={`Visit ${featuredProject.title}`}
               />
             )}
-            <ProjectCover cover={featuredProject.cover} className="h-32 border-b border-border" />
+            <div className="h-32 shrink-0 overflow-hidden border-b border-border transition-[height] duration-300 ease-out group-hover:h-20">
+              <ProjectCover cover={featuredProject.cover} className="h-full" />
+            </div>
             <div className="flex h-full flex-col gap-3 p-4">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-1.5 flex-wrap">
@@ -66,9 +68,11 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              <p className="text-xs leading-relaxed text-muted-foreground">
-                {featuredProject.description}
-              </p>
+              <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr]">
+                <p className="overflow-hidden text-xs leading-relaxed text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  {featuredProject.description}
+                </p>
+              </div>
 
               {featuredProject.caseStudy && (
                 <Link
@@ -123,8 +127,10 @@ export function ProjectsSection() {
                 aria-label={`Open ${project.title}`}
               />
             ) : null}
-            <ProjectCover cover={project.cover} className="h-24 border-b border-border" />
-            <div className="flex h-full flex-col gap-3 p-4">
+            <div className="h-24 shrink-0 overflow-hidden border-b border-border transition-[height] duration-300 ease-out group-hover:h-12">
+              <ProjectCover cover={project.cover} className="h-full" />
+            </div>
+            <div className="flex h-full flex-col gap-2 p-4">
               <div className="flex items-start justify-between gap-2">
                 <h3 className="text-sm font-medium group-hover:text-accent transition-colors">
                   {project.title}
@@ -154,10 +160,12 @@ export function ProjectsSection() {
                   )}
                 </div>
               </div>
-              
-              <p className="text-xs leading-relaxed text-muted-foreground">
-                {project.description}
-              </p>
+
+              <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr]">
+                <p className="overflow-hidden text-xs leading-relaxed text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  {project.description}
+                </p>
+              </div>
 
               {project.caseStudy && (
                 <Link
