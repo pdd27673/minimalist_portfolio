@@ -2,7 +2,6 @@ import React from "react"
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
-import { AccentColorProvider } from '@/components/accent-color-provider'
 import { ScrollRestoration } from '@/components/scroll-restoration'
 import './globals.css'
 
@@ -49,10 +48,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AccentColorProvider>
-            <ScrollRestoration />
-            {children}
-          </AccentColorProvider>
+          <ScrollRestoration />
+          {children}
         </ThemeProvider>
         <Analytics />
       </body>
