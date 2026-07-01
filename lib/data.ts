@@ -79,7 +79,7 @@ export const portfolioData = {
     },
     {
       title: "Midnight Court Booker",
-      description: "The autonomous other half of Time for Tennis: a bot that wins London's midnight court-release race. Trusts the Stripe PaymentIntent as the real lock, splits on the pay_init response (fail fast on 4xx, recover held slots via Playwright on 5xx), cascades court → time → venue fallbacks, and is driven from a Telegram approval card with crash-recoverable SQLite state.",
+      description: "The autonomous other half of Time for Tennis: a Playwright-backed bot that wins London's midnight court-release race. Driven from a Telegram approval card, with court → time → venue fallback cascades and crash-recoverable SQLite state.",
       technologies: ["TypeScript", "Node.js", "Playwright", "got", "SQLite", "node-cron", "Telegram API", "Fly.io"],
       url: null,
       github: null,
@@ -88,7 +88,7 @@ export const portfolioData = {
     },
     {
       title: "Terra",
-      description: "A bilingual (FR/EN) property marketplace for Côte d'Ivoire, focused on Abidjan. A pnpm monorepo pairing an Expo / React Native mobile app with Next.js admin and marketing/listings web apps on a Supabase backend — OTP auth, a live listings feed, favorites, real-time messaging, and profiles.",
+      description: "A bilingual property marketplace for Côte d'Ivoire — Expo mobile app, Next.js web, and Supabase backend in a pnpm monorepo. OTP auth, live listings, real-time messaging, and profiles.",
       technologies: ["React Native", "Expo", "Next.js 15", "TypeScript", "Supabase", "PostgreSQL", "pnpm Monorepo", "Tailwind CSS"],
       url: null,
       github: null,

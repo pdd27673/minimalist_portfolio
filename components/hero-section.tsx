@@ -125,6 +125,7 @@ export function HeroSection() {
   const { theme, setTheme } = useTheme()
   const [githubCommits, setGithubCommits] = useState<GitHubCommit[]>([])
   const [loading, setLoading] = useState(true)
+  const [bioExpanded, setBioExpanded] = useState(false)
 
   useEffect(() => {
     const fetchGitHubCommits = async () => {
@@ -183,14 +184,17 @@ export function HeroSection() {
 
       {/* Bio with inline tech icons */}
       <div className="space-y-2">
-        {personal.bio.map((paragraph, i) => (
-          <p
-            key={i}
-            className="text-sm leading-relaxed text-muted-foreground"
-          >
+        {(bioExpanded ? personal.bio : personal.bio.slice(0, 1)).map((paragraph, i) => (
+          <p key={i} className="text-sm leading-relaxed text-muted-foreground">
             <BioText text={paragraph} />
           </p>
         ))}
+        <button
+          onClick={() => setBioExpanded(!bioExpanded)}
+          className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+        >
+          {bioExpanded ? '↑ less' : '+ more'}
+        </button>
       </div>
 
       {/* Resume button and social links */}
