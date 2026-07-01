@@ -52,11 +52,11 @@ function TimeForTennisCover({ className }: { className: string }) {
 
 function MidnightBookerCover({ className }: { className: string }) {
   // Nightly flow: 10PM (moon) → 00:00 (clock) → booked (check, in accent).
-  const node = 'flex h-8 w-8 items-center justify-center rounded-full border border-border bg-card'
+  const node = 'flex h-7 w-7 items-center justify-center rounded-full border border-border bg-card'
   const line = 'h-px w-4 bg-border'
   return (
     <div className={`${WRAP} ${className} bg-gradient-to-br from-secondary/60 to-card`}>
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5">
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
         <div className="flex items-center gap-2">
           <span className={node}>
             <Moon className="h-3.5 w-3.5 text-muted-foreground" />
@@ -66,11 +66,11 @@ function MidnightBookerCover({ className }: { className: string }) {
             <Clock className="h-3.5 w-3.5 text-muted-foreground" />
           </span>
           <span className={line} />
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent">
             <Check className="h-3.5 w-3.5 text-accent-foreground" />
           </span>
         </div>
-        <span className="text-[9px] font-medium uppercase tracking-wider text-muted-foreground">
+        <span className="text-[8px] font-medium uppercase leading-none tracking-wider text-muted-foreground">
           10PM · 00:00 · booked
         </span>
       </div>
