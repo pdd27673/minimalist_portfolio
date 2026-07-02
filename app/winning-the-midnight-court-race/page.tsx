@@ -71,6 +71,11 @@ export default function WinningTheMidnightCourtRacePage() {
               TypeScript on Node, <code>got</code> for the fast HTTP path with a Playwright fallback for the ambiguous one, SQLite for crash-recoverable state, node-cron for the schedule, and a Telegram bot for the whole interface. Around 226 tests cover the failure branches, since those are the parts that only ever run once a night under conditions you can't reproduce on demand. It's deployed on Fly and pairs with Time for Tennis: that service watches and notifies, this one acts.
             </p>
 
+            <h2 className="text-lg font-medium mt-6 mb-3">A note on the code</h2>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              I'm keeping this one closed-source, and that's a deliberate choice rather than an oversight. It runs against a live, shared booking system where every slot it wins is one that someone else didn't — so publishing a turnkey version wouldn't be a neutral act. It would just escalate the exact midnight arms race the bot is built to win, and blunt everyone's odds, mine included. This write-up is the deliverable; I'm happy to walk through the design and the hard parts in detail, but the repository stays private by design.
+            </p>
+
             <h2 className="text-lg font-medium mt-6 mb-3">By the numbers</h2>
             <p className="text-sm leading-relaxed text-muted-foreground">
               It's been running nightly in production against real money and real contention. As of early July 2026, from the Fly deployment's own logs and booking history:

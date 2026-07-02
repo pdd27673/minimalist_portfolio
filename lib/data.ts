@@ -79,7 +79,7 @@ export const portfolioData = {
       featured: true
     },
     {
-      title: "Time for 10s Booker",
+      title: "Time for Tennis (10s) Booker",
       description: "The autonomous other half of Time for Tennis: a Playwright-backed bot that wins London's midnight court-release race. Driven from a Telegram approval card, with court → time → venue fallback cascades and crash-recoverable SQLite state.",
       technologies: ["TypeScript", "Node.js", "Playwright", "got", "SQLite", "node-cron", "Telegram API", "Fly.io"],
       url: null,
