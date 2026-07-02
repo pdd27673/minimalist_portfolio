@@ -27,18 +27,18 @@ export function InterestsSection() {
       
       <Link href="/interests" className="block">
         <Card className="border-border p-3 hover:border-accent/50 transition-all cursor-pointer">
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
+          <div className="flex flex-wrap justify-center gap-2 w-full">
             {interests.map((interest, index) => {
               const IconComponent = getIcon(interest.icon)
               return (
-                <span 
+                <span
                   key={index}
                   className="text-xs px-3 py-1.5 rounded-md bg-card border border-border text-muted-foreground flex items-center gap-1.5 justify-center text-center"
                 >
                   {IconComponent && (
                     <IconComponent className="h-3 w-3 shrink-0" />
                   )}
-                  <span className="truncate">{interest.title}</span>
+                  <span>{interest.title}</span>
                 </span>
               )
             })}
