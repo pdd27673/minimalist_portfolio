@@ -5,11 +5,13 @@ import { EducationSection } from '@/components/education-section'
 import { InterestsSection } from '@/components/interests-section'
 import { SkillsSection } from '@/components/skills-section'
 import { WritingsSection } from '@/components/writings-section'
+import { SectionNav } from '@/components/section-nav'
 import { portfolioData } from '@/lib/data'
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <SectionNav />
       <main className="mx-auto max-w-3xl px-4 pb-16 sm:px-6 pt-8">
         <HeroSection />
         

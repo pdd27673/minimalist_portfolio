@@ -2,15 +2,17 @@
 
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
+import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 import { portfolioData } from '@/lib/data'
 
 export function WritingsSection() {
   const writings = portfolioData.writings
 
   return (
-    <section className="space-y-4 py-8">
-      <h2 className="text-lg font-medium tracking-tight">Writings</h2>
-      
+    <Reveal as="section" id="writings" className="scroll-mt-24 space-y-4 py-8">
+      <SectionHeading index="06" title="Writings" />
+
       <div className="space-y-0 divide-y divide-border">
         {writings.map((writing, index) => (
           <Link
@@ -36,6 +38,6 @@ export function WritingsSection() {
           </Link>
         ))}
       </div>
-    </section>
+    </Reveal>
   )
 }

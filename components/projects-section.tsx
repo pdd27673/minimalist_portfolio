@@ -7,6 +7,8 @@ import { ExternalLink, Github, BookOpen } from 'lucide-react'
 import { getTechIcon } from '@/lib/tech-icons'
 import { portfolioData } from '@/lib/data'
 import { ProjectCover } from '@/components/project-cover'
+import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 
 export function ProjectsSection() {
   const projects = portfolioData.projects
@@ -14,9 +16,9 @@ export function ProjectsSection() {
   const otherProjects = projects.filter(p => !p.featured)
 
   return (
-    <section className="space-y-4 py-8">
-      <h2 className="text-lg font-medium tracking-tight">Projects</h2>
-      
+    <Reveal as="section" id="projects" className="scroll-mt-24 space-y-4 py-8">
+      <SectionHeading index="02" title="Projects" />
+
       {featuredProject && (
         <div className="mb-4">
           <Card className="relative h-full overflow-hidden border-border p-0 transition-all hover:border-accent group">
@@ -68,8 +70,8 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr]">
-                <p className="overflow-hidden text-xs leading-relaxed text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="grid grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out sm:grid-rows-[0fr] sm:group-hover:grid-rows-[1fr]">
+                <p className="overflow-hidden text-xs leading-relaxed text-muted-foreground opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
                   {featuredProject.description}
                 </p>
               </div>
@@ -161,8 +163,8 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr]">
-                <p className="overflow-hidden text-xs leading-relaxed text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="grid grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out sm:grid-rows-[0fr] sm:group-hover:grid-rows-[1fr]">
+                <p className="overflow-hidden text-xs leading-relaxed text-muted-foreground opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
                   {project.description}
                 </p>
               </div>
@@ -194,6 +196,6 @@ export function ProjectsSection() {
           )
         })}
       </div>
-    </section>
+    </Reveal>
   )
 }

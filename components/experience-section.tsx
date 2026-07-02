@@ -2,14 +2,16 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Card } from '@/components/ui/card'
+import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 import { portfolioData } from '@/lib/data'
 
 export function ExperienceSection() {
   const experiences = portfolioData.experience
 
   return (
-    <section className="space-y-4 py-8">
-      <h2 className="text-lg font-medium tracking-tight">Experience</h2>
+    <Reveal as="section" id="experience" className="scroll-mt-24 space-y-4 py-8">
+      <SectionHeading index="01" title="Experience" />
       <Accordion type="multiple" className="space-y-3">
         {experiences.map((exp, index) => (
           <AccordionItem
@@ -44,6 +46,6 @@ export function ExperienceSection() {
           </AccordionItem>
         ))}
       </Accordion>
-    </section>
+    </Reveal>
   )
 }

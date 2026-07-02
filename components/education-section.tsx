@@ -1,15 +1,17 @@
 'use client'
 
 import { Card } from '@/components/ui/card'
+import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 import { portfolioData } from '@/lib/data'
 
 export function EducationSection() {
   const education = portfolioData.education
 
   return (
-    <section className="space-y-4 py-8">
-      <h2 className="text-lg font-medium tracking-tight">Education</h2>
-      
+    <Reveal as="section" id="education" className="scroll-mt-24 space-y-4 py-8">
+      <SectionHeading index="03" title="Education" />
+
       <div className="space-y-4">
         {education.map((edu, index) => (
           <Card 
@@ -48,6 +50,6 @@ export function EducationSection() {
           </Card>
         ))}
       </div>
-    </section>
+    </Reveal>
   )
 }

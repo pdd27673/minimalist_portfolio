@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 import { getTechIcon } from '@/lib/tech-icons'
+import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 import { portfolioData } from '@/lib/data'
 
 export function SkillsSection() {
@@ -33,7 +35,8 @@ export function SkillsSection() {
   const duplicatedSkills = [...skills, ...skills]
 
   return (
-    <section className="py-8 overflow-hidden">
+    <Reveal as="section" id="skills" className="scroll-mt-24 space-y-4 overflow-hidden py-8">
+      <SectionHeading index="05" title="Stack" />
       <div className="relative">
         <div
           ref={scrollRef}
@@ -54,6 +57,6 @@ export function SkillsSection() {
           })}
         </div>
       </div>
-    </section>
+    </Reveal>
   )
 }

@@ -9,6 +9,9 @@ import { DownloadIcon, Github, Linkedin, Mail, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useRef, useState } from 'react'
 import { BioText } from './bio-text'
+import { HeroSpotlight } from './hero-spotlight'
+import { Magnetic } from './magnetic'
+import { Reveal } from './reveal'
 
 interface GitHubCommit {
   sha: string
@@ -146,7 +149,8 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="space-y-6 py-8">
+    <Reveal as="section" id="top" className="relative scroll-mt-24 space-y-6 py-8">
+      <HeroSpotlight />
       {/* Name, Title, Location */}
       <div className="space-y-1">
         <div className="flex items-center justify-between">
@@ -199,38 +203,46 @@ export function HeroSection() {
 
       {/* Resume button and social links */}
       <div className="flex items-center gap-3">
-        <Button asChild variant="default" size="sm" className="text-xs h-7 px-3 hover:bg-accent hover:text-accent-foreground">
-          <a href={personal.resume} target="_blank" rel="noopener noreferrer">
-            Resume
-            <DownloadIcon className="ml-1.5 h-3 w-3" />
-          </a>
-        </Button>
+        <Magnetic>
+          <Button asChild variant="default" size="sm" className="text-xs h-7 px-3 hover:bg-accent hover:text-accent-foreground">
+            <a href={personal.resume} target="_blank" rel="noopener noreferrer">
+              Resume
+              <DownloadIcon className="ml-1.5 h-3 w-3" />
+            </a>
+          </Button>
+        </Magnetic>
 
-        <a
-          href={`mailto:${personal.email}`}
-          className="text-muted-foreground hover:text-accent transition-colors"
-          aria-label="Email"
-        >
-          <Mail className="h-4 w-4" />
-        </a>
-        <a
-          href={personal.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-accent transition-colors"
-          aria-label="LinkedIn"
-        >
-          <Linkedin className="h-4 w-4" />
-        </a>
-        <a
-          href={personal.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-accent transition-colors"
-          aria-label="GitHub"
-        >
-          <Github className="h-4 w-4" />
-        </a>
+        <Magnetic strength={0.4}>
+          <a
+            href={`mailto:${personal.email}`}
+            className="block text-muted-foreground hover:text-accent transition-colors"
+            aria-label="Email"
+          >
+            <Mail className="h-4 w-4" />
+          </a>
+        </Magnetic>
+        <Magnetic strength={0.4}>
+          <a
+            href={personal.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-muted-foreground hover:text-accent transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="h-4 w-4" />
+          </a>
+        </Magnetic>
+        <Magnetic strength={0.4}>
+          <a
+            href={personal.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-muted-foreground hover:text-accent transition-colors"
+            aria-label="GitHub"
+          >
+            <Github className="h-4 w-4" />
+          </a>
+        </Magnetic>
       </div>
 
       {/* Activity Section with Tabs */}
@@ -304,6 +316,6 @@ export function HeroSection() {
           </TabsContent>
         </Tabs>
       </div>
-    </section>
+    </Reveal>
   )
 }

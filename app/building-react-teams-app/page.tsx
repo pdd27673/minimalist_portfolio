@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { WriteupLede } from '@/components/writeup-lede'
 
 export default function BuildingReactTeamsAppPage() {
   return (
@@ -15,6 +16,12 @@ export default function BuildingReactTeamsAppPage() {
           </header>
 
           <div className="prose prose-invert max-w-none space-y-4">
+            <WriteupLede>
+              Months of building a production React app inside Microsoft Teams: taming Graph API rate
+              limits with an SQS queue (error rate 15% → under 0.5%), surviving desktop-vs-mobile
+              deep-link chaos with platform-specific links, and halving mobile load time by cutting the
+              bundle from 850&nbsp;KB to 320&nbsp;KB.
+            </WriteupLede>
             <p className="text-sm leading-relaxed text-muted-foreground">
               Developing a production‑ready Microsoft Teams app feels familiar at first—it's still web development—but the deeper you go, the more quirks you uncover. Over several months of building a React‑based Teams application with notification systems and deep linking, we ran into architectural trade‑offs, platform limitations, and behavior differences that shaped almost every design decision. Here's what stood out along the way.
             </p>

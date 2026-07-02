@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { BookerArchitectureDiagram } from '@/components/booker-architecture-diagram'
+import { WriteupLede } from '@/components/writeup-lede'
 
 export default function WinningTheMidnightCourtRacePage() {
   return (
@@ -16,6 +17,12 @@ export default function WinningTheMidnightCourtRacePage() {
           </header>
 
           <div className="prose prose-invert max-w-none space-y-4">
+            <WriteupLede>
+              An autonomous bot that wins London&apos;s midnight tennis-court release race: 16 courts
+              booked hands-free, 11 of them the contested 7&nbsp;PM weekday slot, the fastest secured
+              ~26&nbsp;seconds after midnight. The core insight — trust the Stripe payment intent, not
+              the UI&apos;s optimistic cart.
+            </WriteupLede>
             <p className="text-sm leading-relaxed text-muted-foreground">
               London's public tennis courts release their best slots at midnight, seven days ahead. The contested ones — a 7&nbsp;PM weeknight at a popular park — are gone within seconds. My other project, <a href="https://timefor10s.com" className="text-foreground underline underline-offset-2">Time for Tennis</a>, tells you the moment a slot appears. But knowing isn't booking: you still had to be awake at 00:00, fast fingers ready. So I built the other half — a bot that runs the midnight race for me, autonomously, and lets me shape the night from my phone before I go to sleep.
             </p>

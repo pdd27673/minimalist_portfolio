@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { WriteupLede } from '@/components/writeup-lede'
 
 export default function OnStartingOutPage() {
   return (
@@ -15,6 +16,10 @@ export default function OnStartingOutPage() {
           </header>
 
           <div className="prose prose-invert max-w-none space-y-4">
+            <WriteupLede>
+              A short reflection on my first months as an engineer at Goldman Sachs — how patient
+              colleagues, not textbooks, turned an intimidating start into real growth.
+            </WriteupLede>
             <p className="text-sm leading-relaxed text-muted-foreground">
               Not long ago, I was fresh out of college, stepping into a world I knew mostly from textbooks and late-night coding sessions. At <strong>Goldman Sachs</strong>, everything felt bigger: there were more stakeholders, more complex codebases, and a release process that involved branching, pull requests, and careful reviews—things I'd only read about before.
             </p>

@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'
+import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 import { portfolioData } from '@/lib/data'
 import * as LucideIcons from 'lucide-react'
 
@@ -14,17 +16,20 @@ export function InterestsSection() {
   }
 
   return (
-    <section className="space-y-4 py-8">
-      <div className="flex items-center justify-between">
-        <h2 className="text-lg font-medium tracking-tight">Interests</h2>
-        <Link 
-          href="/interests" 
-          className="text-xs text-muted-foreground hover:text-accent transition-colors"
-        >
-          View all →
-        </Link>
-      </div>
-      
+    <Reveal as="section" id="interests" className="scroll-mt-24 space-y-4 py-8">
+      <SectionHeading
+        index="04"
+        title="Interests"
+        action={
+          <Link
+            href="/interests"
+            className="text-xs text-muted-foreground transition-colors hover:text-accent"
+          >
+            View all →
+          </Link>
+        }
+      />
+
       <Link href="/interests" className="block">
         <Card className="border-border p-3 hover:border-accent/50 transition-all cursor-pointer">
           <div className="flex flex-wrap justify-center gap-2 w-full">
@@ -45,6 +50,6 @@ export function InterestsSection() {
           </div>
         </Card>
       </Link>
-    </section>
+    </Reveal>
   )
 }
