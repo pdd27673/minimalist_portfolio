@@ -167,8 +167,8 @@
     }
   }
 
-  /* Cursor-tracking spotlight behind the hero. */
-  .hero-spotlight {
+  /* Cursor-tracking spotlight behind the whole page. */
+  .spotlight {
     opacity: 0;
     transition: opacity 0.3s ease;
     background: radial-gradient(
@@ -188,7 +188,7 @@
     .page-enter {
       animation: none;
     }
-    .hero-spotlight {
+    .spotlight {
       display: none;
     }
     .animate-ping {

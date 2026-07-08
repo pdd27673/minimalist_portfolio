@@ -9,7 +9,6 @@ import { DownloadIcon, Github, Linkedin, Mail, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useRef, useState } from 'react'
 import { BioText } from './bio-text'
-import { HeroSpotlight } from './hero-spotlight'
 import { Magnetic } from './magnetic'
 import { Reveal } from './reveal'
 
@@ -150,7 +149,6 @@ export function HeroSection() {
 
   return (
     <Reveal as="section" id="top" className="relative scroll-mt-24 space-y-6 py-8">
-      <HeroSpotlight />
       {/* Name, Title, Location */}
       <div className="space-y-1">
         <div className="flex items-center justify-between">
