@@ -56,7 +56,7 @@ export function SectionNav() {
         aria-hidden
       />
       <nav
-        className="fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-end gap-3 lg:flex"
+        className="fixed right-6 top-8 z-40 hidden flex-col items-start gap-3 lg:flex"
         aria-label="Section navigation"
       >
         {SECTIONS.map((s) => {
@@ -65,17 +65,9 @@ export function SectionNav() {
             <a
               key={s.id}
               href={`#${s.id}`}
-              className="group flex items-center justify-end gap-2"
+              className="group flex items-center justify-start gap-2"
               aria-current={isActive ? 'true' : undefined}
             >
-              <span
-                className={cn(
-                  'text-[10px] uppercase tracking-wider opacity-0 transition-opacity duration-200 group-hover:opacity-100',
-                  isActive ? 'text-accent opacity-100' : 'text-muted-foreground'
-                )}
-              >
-                {s.label}
-              </span>
               <span
                 className={cn(
                   'h-1.5 w-1.5 rounded-full border transition-all duration-200',
@@ -84,6 +76,14 @@ export function SectionNav() {
                     : 'border-muted-foreground/50 bg-transparent group-hover:border-accent'
                 )}
               />
+              <span
+                className={cn(
+                  'text-[10px] uppercase tracking-wider opacity-0 transition-opacity duration-200 group-hover:opacity-100',
+                  isActive ? 'text-accent opacity-100' : 'text-muted-foreground'
+                )}
+              >
+                {s.label}
+              </span>
             </a>
           )
         })}
