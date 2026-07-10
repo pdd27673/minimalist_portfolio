@@ -56,7 +56,7 @@ export function SectionNav() {
         aria-hidden
       />
       <nav
-        className="fixed right-6 top-8 z-40 hidden flex-col items-start gap-3 lg:flex"
+        className="fixed left-[calc(50%+25rem)] top-8 z-40 hidden flex-col items-start gap-3 lg:flex"
         aria-label="Section navigation"
       >
         {SECTIONS.map((s) => {
