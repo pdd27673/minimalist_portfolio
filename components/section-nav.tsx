@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { cn } from '@/lib/utils'
 
 const SECTIONS = [
@@ -16,18 +17,35 @@ const SECTIONS = [
  * A thin scroll-progress bar (all viewports) plus a scroll-spy dot rail on the
  * right edge (large screens only) that highlights the section currently in view.
  */
+/** Gap kept between the rail and the viewport top once it pins on scroll. */
+const PIN_GAP_REM = 2
+
 export function SectionNav() {
   const [active, setActive] = useState<string>('')
   const [progress, setProgress] = useState(0)
+  const [top, setTop] = useState<number | null>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
 
   useEffect(() => {
     const onScroll = () => {
       const doc = document.documentElement
       const scrollable = doc.scrollHeight - doc.clientHeight
       setProgress(scrollable > 0 ? Math.min(1, Math.max(0, doc.scrollTop / scrollable)) : 0)
+
+      // Start the rail beside the Experience section, then let it stick near
+      // the top as you scroll past it. Measured from the DOM so it adapts to
+      // any hero height / display size instead of a hardcoded offset.
+      const exp = document.getElementById('experience')
+      if (exp) {
+        const rem = parseFloat(getComputedStyle(doc).fontSize) || 16
+        setTop(Math.max(PIN_GAP_REM * rem, exp.getBoundingClientRect().top))
+      }
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -44,11 +62,18 @@ export function SectionNav() {
 
     return () => {
       window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
       io.disconnect()
     }
   }, [])
 
-  return (
+  if (!mounted) return null
+
+  // Rendered into <body> so it escapes the transformed `.page-enter` wrapper
+  // (app/template.tsx): a transformed ancestor becomes the containing block for
+  // fixed descendants, which would otherwise make these overlays scroll away
+  // instead of staying pinned to the viewport.
+  return createPortal(
     <>
       <div
         className="fixed left-0 top-0 z-50 h-0.5 bg-accent transition-[width] duration-150 ease-out"
@@ -56,7 +81,8 @@ export function SectionNav() {
         aria-hidden
       />
       <nav
-        className="fixed left-[calc(50%+25rem)] top-[28rem] z-40 hidden flex-col items-start gap-3 lg:flex"
+        className="fixed left-[calc(50%+25rem)] z-40 hidden flex-col items-start gap-3 lg:flex"
+        style={{ top: top ?? undefined }}
         aria-label="Section navigation"
       >
         {SECTIONS.map((s) => {
@@ -88,6 +114,7 @@ export function SectionNav() {
           )
         })}
       </nav>
-    </>
+    </>,
+    document.body
   )
 }
