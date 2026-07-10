@@ -34,36 +34,40 @@ export function SectionNav() {
       const scrollable = doc.scrollHeight - doc.clientHeight
       setProgress(scrollable > 0 ? Math.min(1, Math.max(0, doc.scrollTop / scrollable)) : 0)
 
-      // Start the rail beside the Experience section, then let it stick near
-      // the top as you scroll past it. Measured from the DOM so it adapts to
-      // any hero height / display size instead of a hardcoded offset.
-      const exp = document.getElementById('experience')
-      if (exp) {
-        const rem = parseFloat(getComputedStyle(doc).fontSize) || 16
-        setTop(Math.max(PIN_GAP_REM * rem, exp.getBoundingClientRect().top))
+      // Line the rail up with the Experience heading, then let it pin near the
+      // top as you scroll past it. Anchored to the <h2> (not the section box,
+      // which has top padding) and measured from the DOM so it adapts to any
+      // hero height / display size instead of a hardcoded offset.
+      const rem = parseFloat(getComputedStyle(doc).fontSize) || 16
+      const expHeading =
+        document.querySelector('#experience h2') ?? document.getElementById('experience')
+      if (expHeading) {
+        setTop(Math.max(PIN_GAP_REM * rem, expHeading.getBoundingClientRect().top))
       }
+
+      // Highlight the section currently in view. Pick the last heading that has
+      // crossed a detection line near the top of the viewport; at the very
+      // bottom force the final section, since short last sections (e.g.
+      // Writings) never scroll far enough to reach that line on their own.
+      if (doc.scrollTop + doc.clientHeight >= doc.scrollHeight - 2) {
+        setActive(SECTIONS[SECTIONS.length - 1].id)
+        return
+      }
+      const line = doc.clientHeight * 0.35
+      let current = SECTIONS[0].id
+      for (const s of SECTIONS) {
+        const el = document.getElementById(s.id)
+        if (el && el.getBoundingClientRect().top <= line) current = s.id
+      }
+      setActive(current)
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll)
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id)
-        })
-      },
-      { rootMargin: '-45% 0px -50% 0px' }
-    )
-    SECTIONS.forEach((s) => {
-      const el = document.getElementById(s.id)
-      if (el) io.observe(el)
-    })
-
     return () => {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
-      io.disconnect()
     }
   }, [])
 
