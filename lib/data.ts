@@ -11,7 +11,7 @@ export const portfolioData = {
     bio: [
       "I'm a **full-stack software engineer** with experience in building scalable applications, cloud infrastructure (AWS), CI/CD pipelines, and AI/ML systems.",
       "Currently at [Goldman Sachs](https://www.goldmansachs.com/), I focus on internal tooling and infrastructure projects. I contributed to building a documentation portal that transformed how engineering teams share and discover information across the organization. I am currently working on an internal full stack mobile app to help serve senior members of the firm.",
-      "I'm also a freelance AI/ML consultant at [Excetra Lab](https://excetra.ai/), where I help businesses build production-ready ML systems and AI solutions.",
+      "From March 2025 to August 2026, I was also a freelance AI/ML consultant at [Excetra Lab](https://excetra.ai/), helping businesses build production-ready ML systems and AI solutions.",
       "I'm passionate about creating technology solutions that solve real-world problems, particularly in underserved markets."
     ]
   },
@@ -20,7 +20,7 @@ export const portfolioData = {
       company: "Excetra Lab",
       role: "AI/ML Engineer",
       location: "London, UK",
-      dateRange: "Mar 2025 – Present",
+      dateRange: "Mar 2025 – Aug 2026",
       achievements: [
         "Helped launch an AI consulting firm focused on building production-ready ML systems and AI solutions for enterprise-level clients",
         "Architected and deployed RAG-based document intelligence systems using Python, vector databases, and LLM APIs",
@@ -86,6 +86,16 @@ export const portfolioData = {
       github: null,
       caseStudy: "/winning-the-midnight-court-race",
       cover: "midnight-booker",
+      featured: false
+    },
+    {
+      title: "systemap (Open-Source Contributor)",
+      description: "An open-source tool where a coding agent maps a system from its code and a checker keeps the map honest. My merged PRs added TypeScript extraction, change, and history support (validated on seven repos, including zod, hono, and nest), fixed declaration-import resolution, and made drift ordering respect the selected AI provider.",
+      technologies: ["Python", "TypeScript", "tree-sitter", "pytest", "mypy"],
+      url: "https://0xfauzi.github.io/systemap/map/",
+      github: "https://github.com/0xfauzi/systemap/pulls?q=is%3Apr+author%3Apdd27673+is%3Amerged",
+      caseStudy: null,
+      cover: "systemap",
       featured: false
     },
     {

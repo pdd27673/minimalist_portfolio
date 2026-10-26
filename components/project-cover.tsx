@@ -114,6 +114,45 @@ function TerraCover({ className }: { className: string }) {
   )
 }
 
+function SystemapCover({ className }: { className: string }) {
+  // System-map motif: module nodes joined by import edges, one lit in accent as
+  // the change under review, over a code → map → check caption.
+  const nodes: [number, number][] = [[80, 44], [150, 40], [220, 46], [115, 78], [185, 80]]
+  const edges: [number, number][] = [[0, 1], [1, 2], [0, 3], [1, 4], [3, 4], [2, 4]]
+  return (
+    <div className={`${WRAP} ${className} bg-gradient-to-br from-secondary/60 to-card`}>
+      <svg
+        viewBox="0 0 300 120"
+        preserveAspectRatio="xMidYMid slice"
+        className="absolute inset-0 h-full w-full text-muted-foreground"
+        aria-hidden
+      >
+        <g stroke="currentColor" strokeWidth="1" opacity="0.35">
+          {edges.map(([a, b]) => (
+            <line key={`${a}-${b}`} x1={nodes[a][0]} y1={nodes[a][1]} x2={nodes[b][0]} y2={nodes[b][1]} />
+          ))}
+        </g>
+        {nodes.map(([x, y], i) => (
+          <rect
+            key={i}
+            x={x - 14}
+            y={y - 7}
+            width="28"
+            height="14"
+            rx="3"
+            fill={i === 4 ? 'var(--accent, #ee2a35)' : 'var(--card, #1c1c1c)'}
+            stroke={i === 4 ? 'none' : 'currentColor'}
+            strokeWidth="1"
+          />
+        ))}
+      </svg>
+      <span className="absolute bottom-2 right-3 rounded-sm border border-border bg-card px-1.5 py-0.5 text-[9px] font-medium text-muted-foreground">
+        code → map → check
+      </span>
+    </div>
+  )
+}
+
 function WadaCover({ className }: { className: string }) {
   return (
     <div className={`${WRAP} ${className} flex`}>
@@ -176,6 +215,8 @@ export function ProjectCover({
       return <MidnightBookerCover className={className} />
     case 'terra':
       return <TerraCover className={className} />
+    case 'systemap':
+      return <SystemapCover className={className} />
     case 'wada':
       return <WadaCover className={className} />
     case 'xgridz':
